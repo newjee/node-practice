@@ -1,9 +1,12 @@
 //외부로 export하는 모듈
 
+//ex02와 차이점 : 
+
+
 //딱 객체 하나만 export 
-module.exports = {
-  PI: 3.14,
-  min:function() {
+exports.PI = 3.14 
+
+exports.min = function() {
     // Array.prototype.forEach.call(arguments, function(e) {
 
     // });
@@ -14,8 +17,9 @@ module.exports = {
       }
     })
     return min;
-  },
-  max:function() {
+  }
+
+  exports.max=function() {
     var max = Number.MIN_SAFE_INTEGER;
     Array.from(arguments).forEach(function(e) {
       if(e>max){
@@ -25,7 +29,4 @@ module.exports = {
     return max;
   }
 
-}
 
-exports.a = 10;
-module.exports.a = 10;
